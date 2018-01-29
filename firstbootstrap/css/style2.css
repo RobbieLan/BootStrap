@@ -1,0 +1,24 @@
+body{
+  background: #000;
+  color: #fff;
+}
+/*min-aspect-ratio: true if the viewport width:height ratio is greater than 3/2. Also: aspect-ratio*/
+@media(min-aspect-ratio: 3/2){
+  body{
+    background-color: #00AA88;
+  }
+}
+/*device-aspect-ratio include the adress bar, status bar etc*/
+@media(device-aspect-ratio: 3/2 ){
+  body{
+    background-color: #8a6d3b;
+  }
+}
+/*true is the device is screen and resolution <= 150 dpi*/
+/*webkit is the core  of safari browser, common device-pixel-ratio is 1. webkit i.e. apple device pixel ratio is 2*/
+/*@media screen and (max-resolution: 150dpi), screen and(-webkit-device-pixel-ratio: 1){*/
+@media screen and (max-resolution: 1dppx), screen and(-webkit-device-pixel-ratio: 1){  /*dppx: dots per pixel, it has the same effect of -webkit-device-pixel-ratio*/
+  body{
+    background-color: tomato;
+  }
+}

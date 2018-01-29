@@ -1,0 +1,34 @@
+body{
+    padding-top:50px; /*the nav bar is default 50 px*/
+}
+
+img{
+    width: 100%; /*carousel pic width*/
+}
+
+.navbar-inverse input[type="text"]{
+    background:#313131;
+    border:none;
+    color:#999;
+}
+.navbar-inverse .navbar-form{
+    position: relative;
+}
+.navbar-inverse button[type="submit"]{
+    position: absolute;
+    top:30%;   /*bootstrap移动设备(xs)优先,这里的修改直接影响到小屏效果,如果大小屏数值不一样,针对大屏做媒体查询*/
+    right:20px;
+    background: none;
+    border:none;
+}
+@media(min-width: 768px){
+    .navbar-inverse button[type="submit"]{
+        top:20%;
+    }
+}
+.navbar-inverse .glyphicon{
+    color:#999;
+}
+.profile{
+    /*margin-right: 25px;*/
+}

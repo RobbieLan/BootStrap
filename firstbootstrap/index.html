@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--meta:vp->tab-->             <!--user-scalable:是否允许用户缩放页面-->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--meta:compat->tab;  IE=edge:对于ie浏览器用最新引擎渲染这个页面-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--link->tab-->
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>BootStrap 3</title>
+</head>
+<body>
+    <!--Navigation BEGIN--> <!--navbar-static-top-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#responsive-navbar">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand"><strong>bootstrap</strong>.net</a>
+            </div>
+            <div class="collapse navbar-collapse" id="responsive-navbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="">课程</a></li>
+                    <li><a href="">博客</a></li>
+                    <li><a href="">手册</a></li>
+                </ul>
+                <form action="#" class="navbar-form navbar-left">
+                    <input type="text" placeholder="搜索" class="form-control">
+                    <button type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </form>
+
+                <a href="#" class="btn btn-sm btn-primary navbar-btn navbar-right hidden-xs">订阅课程</a>
+                <div class="profile navbar-right">
+                     <ul class="nav navbar-nav">
+                        <li><a href="" data-toggle="modal" data-target="#login-modal">登录</a></li>
+                        <li><a href="">注册</a></li>
+                    </ul>
+                    <!--<p class="navbar-text">您好,<a href="#" class="navbar-link">王某</a></p>-->
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--Navigation END-->
+
+    <!--Carousel BEGIN-->
+    <!--<div class="container">--> <!--remove container to show fullscreen pics-->
+        <!--slide: an unnecessary slide effect; ride: automatical roll; interval: roll interval with default 5 ms; pause: stop on mouse hover; wrap: end-to-first non-stop roll >-->
+        <div class="carousel slide" id="slideshow" data-ride="carousel" data-interval="1000" data-pause="false" data-wrap="false">
+            <!--add 'dots'-->
+            <ol class="carousel-indicators">
+                <!--quick operation tip: li[data-target="#slideshow" data-slide-to="$@0"]*2-->
+                <li data-target="#slideshow" data-slide-to="0" class="active"></li>
+                <li data-target="#slideshow" data-slide-to="1"></li>
+            </ol>
+            <!--pitctures to be shown-->
+            <div class="carousel-inner">
+                <div class="item active"><!--active: first pic shown-->
+                    <!--<img src="holder.js/1200x500/auto?text=bootstrap" alt="">--><!--text-generated pic-->
+                    <img src="images/02.jpg" alt="">
+                    <div class="carousel-caption">
+                        <h2>Bootstrap</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur deserunt dignissimos fugiat id ipsam natus numquam odio reiciendis sequi suscipit? Ab autem id mollitia nam repudiandae tempore temporibus totam veniam.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <!--<img src="holder.js/1200x500/auto?text=javascript" alt="">-->
+                    <img src="images/03.jpg" alt="">
+                    <div class="carousel-caption">
+                        <h2>Javascript</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur deserunt dignissimos fugiat id ipsam natus numquam odio reiciendis sequi suscipit?</p>
+                    </div>
+                </div>
+            </div>
+            <!--add prev/next control-->
+            <a href="#slideshow" data-slide="prev" class="left carousel-control">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a href="#slideshow" data-slide="next" class="right carousel-control">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+        <!--custom prev/next control-->
+        <div class="text-center" style="padding: 20px">
+            <div class="btn-group">
+                <button class="btn btn-default prev-slide">
+                    <span class="glyphicon glyphicon-backward"></span>
+                </button>
+                <button class="btn btn-default play-and-stop">
+                    <span class="glyphicon glyphicon-play"></span>
+                </button>
+                <button class="btn btn-default next-slide">
+                    <span class="glyphicon glyphicon-forward"></span>
+                </button>
+            </div>
+        </div>
+    <!--</div>--> <!--remove carousel container div-->
+    <!--Carousel END-->
+
+    <!--Content Container BEGIN-->
+        <!--container类揭示的原理:btstrap默认样式针对移动设别,通过添加媒体查询增加大屏设置. xs<768px起作用 sm>=768px, md>=992px, lg>=1200px   -->
+    <div class="container">
+        <h1 class="page-header">标题</h1> <!--h1.page-header-->   <!--p->tab; lorem->tab-->
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            At omnis quam sed! Culpa debitis dolorem eligendi expedita maxime nemo nihil provident rerum temporibus veniam.
+            Cumque error molestias nulla reprehenderit unde.</p>
+        <div class="row">
+            <div class="col-xs-6 col-sm-8"><h1 class="page-header">row1主体</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto commodi culpa eius ex, harum labore laborum laudantium, mollitia natus omnis quibusdam, repudiandae sequi suscipit totam voluptas. Enim non nostrum ullam.</p></div>
+            <div class="col-xs-6 col-sm-4"><h1 class="page-header">row1边栏</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi autem consequuntur cum dignissimos distinctio doloribus earum facilis id illo laborum, minus nobis nulla repudiandae saepe sunt veniam veritatis voluptates.</p></div>
+        </div>
+        <!--push,pull类在不改变原代码的情况下移动元素的位置--> <!--visible,hidden显示或隐藏-->
+        <div class="row"><!--超小屏正常在左边显示,小屏及以上在右边显示-->
+            <div class="col-xs-6 col-sm-8 col-sm-push-4">
+                <h1 class="page-header">row2主体</h1> <!--下行内容只在xs屏下才展示-->
+                <p class="visible-xs alert alert-info">我们提供ios平台下的app,点击下载!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto commodi culpa eius ex, harum labore laborum laudantium, mollitia natus omnis quibusdam, repudiandae sequi suscipit totam voluptas. Enim non nostrum ullam.</p>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-sm-pull-8"><h1 class="page-header">row2边栏</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi autem consequuntur cum dignissimos distinctio doloribus earum facilis id illo laborum, minus nobis nulla repudiandae saepe sunt veniam veritatis voluptates.</p>
+            </div>
+        </div>
+        <!--嵌套布局 nested-layout-->
+        <div class="row" style="border-color: red;border-width: 1px;">
+            <div class="col-xs-6 col-sm-8">
+                <div class="row">
+                    <div class="col-md-4"><h1 class="page-header">row3标题1</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores blanditiis commodi dolores earum enim, eum exercitationem harum magnam magni maiores molestias obcaecati porro praesentium quo recusandae temporibus vitae voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet blanditiis eius et laborum omnis ratione tempora voluptatem. Animi delectus dignissimos dolorum ducimus, facilis placeat porro quae quasi quibusdam quod velit.</p></div>
+                    <div class="col-md-4"><h1 class="page-header">row3标题2</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate eius enim eum laboriosam neque nobis nulla odio porro provident quasi quibusdam quisquam reiciendis rerum sapiente, sint velit vitae voluptatem.</p></div>
+                    <div class="col-md-4"><h1 class="page-header">row3标题3</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at dicta distinctio dolore, dolorem doloremque eligendi eos fugit illum incidunt ipsum iure necessitatibus nesciunt obcaecati optio perferendis qui quidem tempora.</p></div>
+                    <div class="clearfix"></div><!--清除浮动-->
+                    <div class="col-md-6"><h1 class="page-header">row3标题4</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deleniti excepturi explicabo hic itaque magni nam, nostrum, officiis quaerat quibusdam reprehenderit sed totam, velit. Fuga fugit libero neque quasi ratione!</p></div>
+                    <div class="col-md-6"><h1 class="page-header">row3标题5</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio esse ipsam quae sapiente similique? Ad aperiam cumque dolorem dolorum eum fugit illo minus obcaecati, odio odit repellat vero, voluptates voluptatum.</p></div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4"><h1 class="page-header">row3边栏</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi autem consequuntur cum dignissimos distinctio doloribus earum facilis id illo laborum, minus nobis nulla repudiandae saepe sunt veniam veritatis voluptates.</p></div>
+        </div>
+        <!--偏移-->
+        <div class="row">
+            <!--<div class="col-xs-6 col-sm-8">-->
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-md-4"><h1 class="page-header">row4标题1</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores blanditiis commodi dolores earum enim, eum exercitationem harum magnam magni maiores molestias obcaecati porro praesentium quo recusandae temporibus vitae voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet blanditiis eius et laborum omnis ratione tempora voluptatem. Animi delectus dignissimos dolorum ducimus, facilis placeat porro quae quasi quibusdam quod velit.</p></div>
+                    <div class="col-md-4"><h1 class="page-header">row4标题2</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate eius enim eum laboriosam neque nobis nulla odio porro provident quasi quibusdam quisquam reiciendis rerum sapiente, sint velit vitae voluptatem.</p></div>
+                    <div class="col-md-4"><h1 class="page-header">row4标题3</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at dicta distinctio dolore, dolorem doloremque eligendi eos fugit illum incidunt ipsum iure necessitatibus nesciunt obcaecati optio perferendis qui quidem tempora.</p></div>
+                    <div class="clearfix"></div><!--清除浮动-->
+                    <div class="col-md-6 col-md-offset-6"><h1 class="page-header">row4标题4</h1><p class="alert alert-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deleniti excepturi explicabo hic itaque magni nam, nostrum, officiis quaerat quibusdam reprehenderit sed totam, velit. Fuga fugit libero neque quasi ratione!</p></div>
+                    <div class="col-md-6"><h1 class="page-header">row4标题5</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio esse ipsam quae sapiente similique? Ad aperiam cumque dolorem dolorum eum fugit illo minus obcaecati, odio odit repellat vero, voluptates voluptatum.</p></div>
+                </div>
+            </div>
+            <!--<div class="col-xs-6 col-sm-4">-->
+            <div class="col-sm-4">
+                <h1 class="page-header">row4边栏</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi autem consequuntur cum dignissimos distinctio doloribus earum facilis id illo laborum, minus nobis nulla repudiandae saepe sunt veniam veritatis voluptates.</p>
+            </div>
+        </div>
+    </div>
+    <!--Content Container END-->
+
+    <!--Modal BEGIN-->
+    <!--<div class="modal in" style="display: block">--> <!--in样式模拟modal进入状态,方便编辑调试,remove in and block in prod env-->
+    <div class="modal fade" id="login-modal" tabindex="-1" data-backdrop="true" data-remote="login-form.html"><!--tabindex: When this modal was shown and tab was pressed, the focus will start from here.-->
+         <div class="modal-dialog modal-sm">
+           <div class="modal-content">
+               <!--Optionally get content remotely i.e. from external file-->
+                <!--<div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4>用户登录</h4>
+                </div>
+                <div class="modal-body">
+                    <p>用户登录用表单</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary">登录</button>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <!--Display a transparent grey background (Make use of this only in dev period).  (But it doesn't work?)-->
+    <!--<div class="modal-backdrop in"></div>-->
+    <!--Modal END-->
+
+    <!--quick operation tip: script:src->tab-->
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <script src="lib/js/holder.js"></script><!--generate pic with given text-->
+    <script src="js/app.js"></script>
+    <!--Alternatively we use js to control Modal-->
+    <script>
+        $(function(){
+            /*We can set modal options either right in the div class attribute or in js*/
+            $("#login-modal").modal({
+                show: false,   /*modal is not shown by default*/
+                //backdrop: false, /*trasparent grey background*/
+                keyboard: false /*disable close modal by pressing esc button*/
+                //remote: "login-form.html" /*four different ways to show modal content:1) hardcode in this page 2) set remote attribute here in js to login-from.html 3) set href in login link to login-form.html 4) data-remote attribute in modal div*/
+            });
+            /*Tip: execute in console: $('#login-modal').modal('hide'/'show'/'toggle') will respectively hide/show/hideAndShow the modal*/
+            /*modal events*/
+            $("#login-modal").on("show.bs.modal", function () {
+                console.log("显示对话框");
+            });
+            $("#login-modal").on("shown.bs.modal", function () {
+                console.log("显示了对话框");
+            });
+            $("#login-modal").on("hide.bs.modal", function () {
+                console.log("隐藏对话框");
+            });
+            $("#login-modal").on("hidden.bs.modal", function () {
+                console.log("隐藏了对话框");
+            });
+            $("#login-modal").on("loaded.bs.modal", function () {
+                console.log("已经加载好remote里的对话框内容");
+            });
+            /*carousel events*/
+            $('#slideshow').on('slide.bs.carousel',function(){
+                console.log('Play pics');
+            })
+            $('#slideshow').on('slid.bs.carousel',function(){
+                console.log('pics played');
+            })
+        });
+    </script>
+</body>
+</html>
