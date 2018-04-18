@@ -50,12 +50,44 @@ new Vue({
 })
 
 Vue.component('child', {
-  // 声明 props
   props: ['myMessage'],
-  // 就像 data 一样，prop 也可以在模板中使用
-  // 同样也可以在 vm 实例中通过 this.message 来使用
   template: '<span>{{ myMessage }}</span>'
 })
 new Vue({
   el: '#app4'
+})
+
+new Vue({
+  el: '#app5',
+  data: {
+    parentMsg: 'Message from parent'
+  }
+})
+
+
+Vue.component('todo-item', {
+  props: ['text','isComplete'],
+  template: '<span>{{ text }}  '+'  {{isComplete}}</span>'
+})
+//It doesn't work to pass an object...
+/* Vue.component('todo-item', {
+  props: ['todo'],
+  template: '<span>{{ todo.text }}</span>'
+}) */
+new Vue({
+  el: '#app6',
+  data:{
+	todo: {
+		text: 'Learn Vue',
+		isComplete: false
+	}
+  } 
+})
+
+Vue.component('blog-post', {
+  props: ['title'],
+  template: '<h3>{{ title }}</h3>'
+})
+new Vue({
+  el: '#app7'
 })
