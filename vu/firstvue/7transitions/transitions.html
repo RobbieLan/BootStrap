@@ -1,0 +1,13 @@
+<script src="../vue.js"></script>
+
+<div id="demo">
+  <button v-on:click="show = !show">
+    Toggle
+  </button>
+  <transition name="fadde">
+    <p v-if="show">hello</p>
+  </transition>
+</div>
+
+<link rel="stylesheet" type="text/css" href="transitions.css">
+<script src="transitions.js"></script>

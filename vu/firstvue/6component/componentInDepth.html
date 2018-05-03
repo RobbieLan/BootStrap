@@ -1,0 +1,206 @@
+<script src="../vue.js"></script>
+
+<h6>Basic example && data must be a function</h6>
+<div id="b-counter1">
+  <button-counter></button-counter>
+</div>
+
+<h6> reusing components </h6>
+<div id="b-counter2">
+  <button-counter></button-counter>
+  <button-counter></button-counter>
+  <button-counter></button-counter>
+</div>
+
+
+<h6> Passing data to child components with props </h6>
+<!-- The v instance is considered as 'parent' -->
+<div id="props-demo">
+<blog-post title="My journey with v"></blog-post>
+<blog-post title="Blogging with v"></blog-post>
+<blog-post title="Why v is so fun"></blog-post>
+</div>
+
+<h6>Passing data dynamically (e.g.from an api call)</h6>
+<div id="blog-post-demo">
+<blog-post
+  v-for="post in posts"
+  v-bind:key="post.id"
+  v-bind:title="post.title"
+></blog-post>
+</div>
+
+<h6>A single root element</h6>
+<div id="single-root">
+<!-- Q? The expected effect as shown in the guide didn't come out -->
+<!-- <div class="blog-post"> -->
+<h3>{{ post.title }}</h3>
+<div v-html="post.content"></div>
+</div>
+
+
+<h6> Sending Messages to Parents with Events </h6>
+<div id="blog-posts-events-demo">
+  <div :style="{ fontSize: postFontSize + 'em' }">
+    <b-post
+      v-for="post in posts"
+      v-bind:key="post.id"
+      v-bind:post="post"
+	  v-on:enlarge-text="postFontSize += 0.1"
+    ></b-post>
+  </div>
+</div>
+
+<h6> Emitting a Value With an Event </h6>
+<div id="blog-posts-events-demo2">
+  <div :style="{ fontSize: postFontSize + 'em' }">
+    <b-post2
+      v-for="post in posts"
+      v-bind:key="post.id"
+      v-bind:post="post"
+	  v-on:enlarge-text="postFontSize += $event"	 
+    ></b-post2>
+	 <!-- v-on:enlarge-text="onEnlargeText" -->
+  </div>
+</div>
+
+<h6> Using v-model on Components </h6>
+<!-- Q? A little confusing... -->
+<div id="custom-inputs">
+<custom-input v-model="searchText"></custom-input>
+</div>
+
+<h6> Content Distribution with Slots </h6>
+<div id="content-slot">
+<alert-box>
+  Something bad happened.
+</alert-box>
+</div>
+
+<h6> Dynamic Components </h6>
+<div id="dynamic-component-demo1" class="demo">
+  <button
+    v-for="tab in tabs1"
+    v-bind:key="tab"
+    v-bind:class="['tab-button', { active: currentTab === tab }]"
+    v-on:click="currentTab = tab"
+  >{{ tab }}</button>
+
+  <component
+    v-bind:is="currentTabComponent1"
+    class="tab"
+  ></component>
+</div>
+
+<h6> DOM Template Parsing Caveats </h6>
+<div id="app2">
+	<table>
+		<!-- <my-row></my-row> -->
+		<tr is="my-row"></tr>
+	</table>
+</div>
+
+<!-- component in depth -->
+
+
+<div id="d-props">
+<b-post v-bind:post-title="post.title"></b-post>
+</div>
+
+<h6>Passing the Properties of an Object</h6>
+<!-- Q? -->
+<div id="dynamic-props">
+	<blog-post v-bind="post"></blog-post>
+</div>
+
+<h6>Disabling Attribute Inheritance</h6>
+<div id="disable-attribute">
+	<base-input
+	  v-model="username"
+	  class="username-input"
+	  placeholder="Enter your username"
+	  maxlength="5"
+	></base-input>
+</div>
+
+<h6>Customizing Component v-model</h6>
+<div id="custom-com">
+	<base-checkbox v-model="lovingVue"></base-checkbox>
+</div>
+
+<h6>Binding Native Events to Components</h6>
+<div id="native-events">
+	<base-input2
+	  v-model="username"
+	  class="username-input"
+	  placeholder="Enter your username"
+	  maxlength="5"
+	></base-input2>
+</div>
+
+<h6>.sync modifier?</h6>
+<div id="sync-modifier">
+	<text-document
+		v-bind:title="doc.title"
+		v-on:update:title="doc.title = $event"
+	></text-document>
+</div>
+
+<h6>named slots?</h6>
+<div id="named-slots">
+	<base-layout>
+	  <template slot="header">
+		<h1>Here might be a page title</h1>
+	  </template>
+
+	  <p>A paragraph for the main content.</p>
+	  <p>And another one.</p>
+
+	  <template slot="footer">
+		<p>Here's some contact info</p>
+	  </template>
+	  
+	  <template slot="btn">
+	  </template>
+	</base-layout>
+</div>
+
+<h6>scoped slots</h6>
+<div id="scoped-slots">
+	<todo-list v-bind:todos="todos">
+  <!-- Define `slotProps` as the name of our slot scope -->
+  <template slot-scope="slotProps">
+    <!-- Define a custom template for todo items, using -->
+    <!-- `slotProps` to customize each todo.            -->
+    <span v-if="slotProps.todo.isComplete">#</span>
+    {{ slotProps.todo.text }}
+  </template>
+</todo-list>
+</div>
+
+<h6>Dynamic Components</h6>
+<div id="dynamic-component-demo">
+  <button
+    v-for="tab in tabs"
+    v-bind:key="tab"
+    v-bind:class="['tab-button', { active: currentTab === tab }]"
+    v-on:click="currentTab = tab"
+  >{{ tab }}</button>
+
+  <keep-alive>
+    <component
+      v-bind:is="currentTabComponent"
+      class="tab"
+    ></component>
+  </keep-alive>
+</div>
+
+<h6>Async Components</h6>
+<div id="async-component-demo">
+  <async-example></async-example>
+</div>
+
+</br></br></br>
+<h6> ---END--- </h6>
+<link rel="stylesheet" type="text/css" href="componentInDepth.css">
+<script src="componentInDepth.js"></script>
