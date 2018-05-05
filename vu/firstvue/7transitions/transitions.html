@@ -9,5 +9,77 @@
   </transition>
 </div>
 
+<h6>css transition</h6>
+<div id="css-transition">
+  <button @click="show = !show">
+    Toggle render
+  </button>
+  <transition name="slide-fade">
+    <p v-if="show">hello</p>
+  </transition>
+</div>
+
+<h6>css animation</h6>
+<div id="css-animation">
+  <button @click="show = !show">Toggle show</button>
+  <transition name="bounce">
+    <p v-if="show">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis enim libero, at lacinia diam fermentum id. Pellentesque habitant morbi tristique senectus et netus.</p>
+  </transition>
+</div>
+
+
+<link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+<h6>custom transition classes</h6>
+<div id="custom-transition-classes">
+  <button @click="show = !show">
+    Toggle render
+  </button>
+  <transition
+    name="custom-classes-transition"
+    enter-active-class="animated tada"
+    leave-active-class="animated bounceOutRight"
+  >
+    <p v-if="show">hello</p>
+  </transition>
+</div>
+
+<!--
+Velocity works very much like jQuery.animate and is
+a great option for JavaScript animations
+-->
+<h6>js hooks</h6>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+<div id="js-hooks">
+  <button @click="show = !show">
+    Toggle
+  </button>
+  <transition
+    v-on:before-enter="beforeEnter"
+    v-on:enter="enter"
+    v-on:leave="leave"
+    v-bind:css="false"
+  >
+    <p v-if="show">
+      Demo
+    </p>
+  </transition>
+</div>
+
+<h6>transitioning between elements</h6>
+<div id="transitioning-between-elements">
+  <transition>
+  <button v-if="docState === 'saved'" key="saved">
+    Edit
+  </button>
+  <button v-if="docState === 'edited'" key="edited">
+    Save
+  </button>
+  <button v-if="docState === 'editing'" key="editing">
+    Cancel
+  </button>
+</transition>
+</div>
+
+
 <link rel="stylesheet" type="text/css" href="transitions.css">
 <script src="transitions.js"></script>
